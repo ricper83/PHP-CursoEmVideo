@@ -12,7 +12,7 @@
     <h1>Resultado da conversão:</h1>
   <main>
     <?php 
-      
+      //desafio004 é um conversor de real para dólar usando a API do Banco Central para cotação mais próxima do dólar.
       $inicio = date("m-d-Y", strtotime("-7 days"));
       $fim = date("m-d-Y");
       $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''.$inicio.'\'&@dataFinalCotacao=\''.$fim.'\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao'; //aspas simples para não processar os $. Usar contrabarra \ na frente das aspas simples internas da url em json.
